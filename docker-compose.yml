@@ -1,0 +1,23 @@
+services:
+  spade-server-service:
+    build:
+      context: ./docker
+      dockerfile: spade-bdi.Dockerfile
+    platform: linux/amd64
+    container_name: spade-server
+    ports:
+      - "5222:5222"
+    # entrypoint: /entrypoint.sh
+    # command: tail -f /dev/null  # Or replace with your app start command
+    command: ["spade", "run"]
+
+  # spade-app-service:
+  #   build:
+  #     context: ./docker
+  #     dockerfile: spade-bdi.Dockerfile
+  #   container_name: spade-app
+  #   platform: linux/amd64
+  #   networks:
+  #     - default
+  #   working_dir: /app
+  #   command: tail -f /dev/null  # Or replace with your app start command
