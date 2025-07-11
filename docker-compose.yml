@@ -1,8 +1,7 @@
 services:
   spade-server-service:
     build:
-      context: ./docker
-      dockerfile: spade-bdi.Dockerfile
+      dockerfile: docker/spade-bdi.Dockerfile
     platform: linux/amd64
     container_name: spade-server
     ports:

@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y git vim && \
     apt-get clean
 
-COPY requirements.txt .
+COPY docker/requirements.txt .
 
 # Install dependencies directly 
 RUN pip install --upgrade pip && \
